@@ -7,7 +7,9 @@ class Main(object):
 
     @neovim.function("Template")
     def template(self, args):
-        self.vim.command('echo "hello template!"')
-        for arg in args:
-            self.vim.command(f"echo {arg}")
-
+        self.vim.command("echo hello template!")
+        # args are not valid
+        if (args):
+            self.vim.command("echo args exist!")
+        else:
+            self.vim.command("echo no args passed!")
